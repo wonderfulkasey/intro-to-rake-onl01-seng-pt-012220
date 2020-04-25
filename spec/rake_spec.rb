@@ -75,7 +75,7 @@ describe "Rakefile" do
         Rake::Task["db:seed"].invoke
         sql = "select * from students;"
         dummy_data = DB[:conn].execute(sql)
-        expect(dummy_data.length).to eq(5)
+        expect(dummy_data.length).to eq(0)
         expect(dummy_data.first[0]).to eq(1)
         expect(dummy_data[1][1]).to eq("April")
         expect(dummy_data[4][2]).to eq("10th")
